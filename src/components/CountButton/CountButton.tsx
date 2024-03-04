@@ -1,20 +1,21 @@
-import React, { MouseEvent, useState } from 'react';
+import React, { FC } from 'react';
 
 import { cnCountButton } from './CountButton.classname';
 
 import './CountButton.css';
 
-const CountButton = () => {
-    const [count, setCount] = useState(0)
+type CountButtonProps = {
+    text: string;
+    value: number;
+    onClick: () => void;
+}
 
-    const handleClick = (event: MouseEvent) => {
-        setCount(count + 1)
-    }
+const CountButton: FC<CountButtonProps> = ({ text, value, onClick }) => {
 
     return (
-        <div>
-            <button className={cnCountButton()} onClick={handleClick}>
-                Количество кликов:{count}
+        <div className={cnCountButton()}>
+            <button className={cnCountButton('PlusOne', cnCountButton('Button'))} onClick={onClick}>
+                {text} {value}
             </button>
         </div>
     );

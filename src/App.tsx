@@ -1,16 +1,14 @@
 import React from 'react';
 
-import { Painter } from './components/Painter/Painter';
-import { CountButton } from './components/CountButton/CountButton';
-
 import './App.css';
+import { Counter } from './components/Counter/Counter';
 
 
 
 const App = () => {
   return (
     <div className="App">
-      <CountButton />
+      <Counter />
     </div>
   );
 }
